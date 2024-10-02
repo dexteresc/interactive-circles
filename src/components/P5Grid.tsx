@@ -1,9 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import p5 from "p5";
 
-const P5Grid: React.FC<{ cursorRange?: number }> = ({
-  cursorRange = 200,
-}) => {
+const P5Grid: React.FC<{ cursorRange?: number }> = ({ cursorRange = 200 }) => {
   const sketchRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const p5InstanceRef = useRef<p5 | null>(null);
@@ -36,7 +34,7 @@ const P5Grid: React.FC<{ cursorRange?: number }> = ({
       };
 
       p.draw = () => {
-        p.background(255);
+        p.background(245, 239, 255);
         p.noStroke();
 
         for (let x = gap / 2; x < p.width; x += gap) {
@@ -64,7 +62,7 @@ const P5Grid: React.FC<{ cursorRange?: number }> = ({
               diameter *= expansionFactor;
             }
 
-            p.fill(0, 150); // Semi-transparent black
+            p.fill(205, 193, 255); // Circle color
             p.circle(x, y, diameter);
           }
         }
