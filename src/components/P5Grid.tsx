@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import p5 from "p5";
 
-const P5Grid: React.FC<{ cursorRange: number }> = ({
+const P5Grid: React.FC<{ cursorRange?: number }> = ({
   cursorRange = 200,
 }) => {
   const sketchRef = useRef<HTMLDivElement>(null);
