@@ -20,7 +20,7 @@ const P5Grid: React.FC<{ cursorRange?: number }> = ({ cursorRange = 200 }) => {
     const sketch = (p: p5) => {
       const xScale = 0.015;
       const yScale = 0.02;
-      const gap = 20;
+      const gap = 30;
       const maxExpansion = 1.5; // Maximum expansion factor
 
       p.setup = () => {
@@ -42,7 +42,7 @@ const P5Grid: React.FC<{ cursorRange?: number }> = ({ cursorRange = 200 }) => {
             const noiseValue = p.noise(
               x * xScale,
               y * yScale,
-              p.frameCount * 0.01
+              p.frameCount * 0.02
             );
             let diameter = noiseValue * gap;
 
